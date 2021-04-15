@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swe645angular-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: swe645angular-app
+  template:
+    metadata:
+      labels:
+        run: swe645angular-app
+    spec:
+      containers:
+      - name: swe645angular-app
+        image: gmu645/surveyangular2:13
+        ports:
+        - containerPort: 80
+        - containerPort: 443
+
